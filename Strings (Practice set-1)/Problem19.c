@@ -2,15 +2,15 @@
 
 int main() {
     char str[30];
-    
+
     // user input
     printf("Enter a string: ");
     gets(str);
 
     // storing the frequency
-    int map1[26]; 
+    int map1[26];
     int map2[26];
-    
+
     for (int i = 0; i < 26; i++) {
         map1[i] = 0;
         map2[i] = 0;
@@ -26,22 +26,23 @@ int main() {
         }
     }
 
-    // storing maximum frequency
-    int maxf = 0;
-    char higf;
+    // storing minimum frequency
+    int minf = 1000000007;
+    char lowf;
+
     for (int i = 0; i < 26; i++) {
-        if (map1[i] > maxf) {
-            maxf = map1[i];
-            higf = i+97;
+        if (map1[i] > 0 && map1[i] < minf) {
+            minf = map1[i];
+            lowf = i+97;
         }
 
-        if (map2[i] > maxf) {
-            maxf = map2[i];
-            higf = i+65;
+        if (map2[i] > 0 && map2[i] < minf) {
+            minf = map2[i];
+            lowf = i+65;
         }
     }
 
-    printf("The highest frequency character in %s: %c with frequency %d!", str, higf, maxf);
+    printf("The lowest frequency character in %s: %c with frequency %d!", str, lowf, minf);
 
     return 0;
 }
