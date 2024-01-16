@@ -13,12 +13,15 @@ int main() {
     printf("Enter the new character: ");
     replaced = getchar();
 
+    int idx = -1; // last index
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] == target) { // comparing each character to target
-            str[i] = replaced; // update first occurrence
-            break;
+            idx = i; // updating last index
         }
     }
+
+    // update last occurrence
+    if (idx > -1) str[idx] = replaced;
 
     printf("The updated string: %s", str);
 
