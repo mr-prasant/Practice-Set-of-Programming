@@ -36,7 +36,6 @@ int main() {
             while ( j < wrdlen) {
                 if (str[i+j] != word[j]) {
                     isEqual = 'f';
-                    break;
                 }
 
                 j++;
