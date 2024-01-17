@@ -22,7 +22,9 @@ int main() {
     }
 
     // checking the first occurrance of word
-    int idx = -1;
+    int idx[1];
+    idx[0] = -1;
+    int p = 0;
     for (int i = 0; i <= strlen-wrdlen; i++) {
         if (str[i] == word[0]) { // checking the first character
             char isEqual = 't';
@@ -42,15 +44,19 @@ int main() {
             }
 
             if (isEqual == 't') {
-                idx = i;
+                idx[p] = i;
+                p++;
             }
         }
     }
 
-    if (idx == -1) {
+    if (idx[0] == -1) {
         printf("%s word is not found in %s", word, str);
     } else {
-        printf("The last occurrence of %s is: %d", word, idx);
+        printf("The all occurrence is: ");
+        for (int i = 0; i < p; i++) {
+            printf("%d ", idx[i]);
+        }
     }
 
     return 0;
