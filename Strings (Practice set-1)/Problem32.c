@@ -21,8 +21,7 @@ int main() {
         wrdlen++;
     }
 
-    // checking the all occurrance of word
-    int count = 0;
+    // checking the first occurrance of word
     for (int i = 0; i <= strlen-wrdlen; i++) {
         if (str[i] == word[0]) { // checking the first character
             char isEqual = 't';
@@ -34,20 +33,29 @@ int main() {
 
             int j = i+1;
             while ( j < wrdlen) {
-                if (str[i+j] != word[j]) {
+                if (str[i+j] != word[j]) { // checking the word
                     isEqual = 'f';
                 }
 
                 j++;
             }
 
-            if (isEqual == 't') {
-                count++;
+            if (isEqual == 't') { // removing the word
+                if (str[i+wrdlen] == ' ') {
+                    wrdlen++; // removing the space just after word
+                }
+
+                while (str[i+wrdlen] != '\0') {
+                    str[i] = str[i+wrdlen];
+                    i++;
+                }
+
+                str[i] = '\0'; // terminating the word
             }
         }
     }
     
-    printf("The all occurrences of %s in %s: %d", word, str, count);
+    printf("The updated string: %s", str);
 
     return 0;
 }

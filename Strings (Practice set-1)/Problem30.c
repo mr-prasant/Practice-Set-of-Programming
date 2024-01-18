@@ -21,7 +21,7 @@ int main() {
         wrdlen++;
     }
 
-    // checking the first occurrance of word
+    // checking the last occurrance of word
     int idx[1];
     idx[0] = -1;
     int p = 0;
