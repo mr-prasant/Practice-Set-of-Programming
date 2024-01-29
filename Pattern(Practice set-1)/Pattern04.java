@@ -11,7 +11,7 @@ public class Pattern04 {
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print((char) (65+(j%26)) + " ");
+                System.out.print((char) (65 + (j%26)) + " ");
             }
             System.out.println();
         }
