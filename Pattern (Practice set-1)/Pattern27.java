@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Pattern27 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
+        // user input
+        System.out.print("Enter a number: ");
         int n = sc.nextInt();
         sc.close();
 
@@ -17,5 +20,6 @@ public class Pattern27 {
             }
             System.out.println();
         }
+
     }
 }
